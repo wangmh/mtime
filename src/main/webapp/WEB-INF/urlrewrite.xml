@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite
+        PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN"
+        "http://urlrewritefilter.googlecode.com/svn-history/r275/trunk/src/java/org/tuckey/web/filters/urlrewrite/dtds/urlrewrite3.0.dtd">
+
+<urlrewrite>
+    <!--<rule>-->
+        <!--<from>^/errMsg/show(/)?$</from>-->
+        <!--<to>/feedback/errMsg.do</to>-->
+        <!--<condition type="method">POST</condition>-->
+    <!--</rule>-->
+    <!--Location: /showtime/showTimesByCinemaMovieDate/1763/115128/2013-03-27/-->
+    <rule>
+        <from>^/showtime/showTimesByCinemaMovieDate/([0-9]+)/([0-9]+)/([0-9]{4}-[0-9]{2}-[0-9]{2})(/)?$</from>
+        <to>/showtime/showTimesByCinemaMovieDate.do?cinema_id=$1&amp;movie_id=$2&amp;date=$3</to>
+        <condition type="method">GET</condition>
+    </rule>
+    <rule>
+        <from>^/showtime/([0-9]+)(/)?$</from>
+        <to>/showtime/movie.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+    <rule>
+        <from>^/showtime/([0-9]+)/([0-9]+)/movies(/)?$</from>
+        <to>/showtime/movies.do?city_id=$1&amp;cinema_id=$2</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/showtime/([0-9]+)/cinemas?$</from>
+        <to>/showtime/cinemas.do?city_id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+
+
+    <rule>
+        <from>^/cinemas/([0-9]+)?(/)?$</from>
+        <to>/cinemas/list.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/cinemas(/)?$</from>
+        <to>/cinemas/list.do?id=290</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+
+    <rule>
+        <from>^/cinema/([0-9]+)(/)?$</from>
+        <to>/cinema/show.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/cinema/([0-9]+)/([0-9]+)/movies(/)?$</from>
+        <to>/cinema/movie.do?city_id=$1&amp;cinema_id=$2</to>
+        <condition type="method">GET</condition>
+    </rule>
+    <rule>
+        <from>^/movies(/)?$</from>
+        <to>/movies/show.do?id=290</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/movies/([0-9]+)?(/)?$</from>
+        <to>/movies/show.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/movies/coming(/)?$</from>
+        <to>/movies/coming.do</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+
+
+</urlrewrite>

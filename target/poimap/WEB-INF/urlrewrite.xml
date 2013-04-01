@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite
+        PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN"
+        "http://urlrewritefilter.googlecode.com/svn-history/r275/trunk/src/java/org/tuckey/web/filters/urlrewrite/dtds/urlrewrite3.0.dtd">
+
+<urlrewrite>
+    <!--<rule>-->
+        <!--<from>^/errMsg/show(/)?$</from>-->
+        <!--<to>/feedback/errMsg.do</to>-->
+        <!--<condition type="method">POST</condition>-->
+    <!--</rule>-->
+
+
+    <rule>
+        <from>^/cinames/([0-9]+)?(/)?$</from>
+        <to>/cinames/list.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/cinames(/)?$</from>
+        <to>/cinames/list.do?id=290</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+
+    <rule>
+        <from>^/ciname/([0-9]+)(/)?$</from>
+        <to>/ciname/show.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/ciname/([0-9]+)/movie/(.+)?(/)?$</from>
+        <to>/ciname/movie.do?id=$1&amp;date=$2</to>
+        <condition type="method">GET</condition>
+    </rule>
+    <rule>
+        <from>^/ciname/([0-9]+)/movie(/)?$</from>
+        <to>/ciname/movie.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+    <rule>
+        <from>^/movies(/)?$</from>
+        <to>/movies/show.do?id=290</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/movies/([0-9]+)?(/)?$</from>
+        <to>/movies/show.do?id=$1</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+    <rule>
+        <from>^/movies/coming(/)?$</from>
+        <to>/movies/coming.do</to>
+        <condition type="method">GET</condition>
+    </rule>
+
+
+
+</urlrewrite>
