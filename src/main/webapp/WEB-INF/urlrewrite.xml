@@ -10,6 +10,12 @@
         <!--<condition type="method">POST</condition>-->
     <!--</rule>-->
     <!--Location: /showtime/showTimesByCinemaMovieDate/1763/115128/2013-03-27/-->
+
+    <rule>
+        <from>^/showtime/getChinaLocations(/)?$</from>
+        <to>/showtime/getChinaLocations.do</to>
+        <condition type="method">GET</condition>
+    </rule>
     <rule>
         <from>^/showtime/showTimesByCinemaMovieDate/([0-9]+)/([0-9]+)/([0-9]{4}-[0-9]{2}-[0-9]{2})(/)?$</from>
         <to>/showtime/showTimesByCinemaMovieDate.do?cinema_id=$1&amp;movie_id=$2&amp;date=$3</to>
@@ -20,6 +26,9 @@
         <to>/showtime/movie.do?id=$1</to>
         <condition type="method">GET</condition>
     </rule>
+
+
+
     <rule>
         <from>^/showtime/([0-9]+)/([0-9]+)/movies(/)?$</from>
         <to>/showtime/movies.do?city_id=$1&amp;cinema_id=$2</to>

@@ -93,7 +93,10 @@ public class MTimeService {
         String path  =  "/showtime/" + cityId + "/cinemas" ;
         return mtimeGet(path);
     }
-
+    public String getChinaLocations() throws IOException, URISyntaxException {
+        String path = "/showtime/chinalocations";
+        return mtimeGet(path);
+    }
 
     public String getCinemas(String cityId) throws URISyntaxException, IOException {
 
